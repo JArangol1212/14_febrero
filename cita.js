@@ -251,7 +251,7 @@ function setupButton() {
         
         // 6. REDIRIGIR DESPUÉS DE 4 SEGUNDOS
         setTimeout(() => {
-            window.location.href = 'index.html'; // Cambia esto si quieres
+            window.location.href = 'principal.html'; // Cambia esto si quieres
         }, 4000);
     });
 }

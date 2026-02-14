@@ -1,144 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>14.02.2026 · La fecha que esperamos</title>
-    <link rel="stylesheet" href="style.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>14 de Febrero · ¿Aceptas mi cita? 💜</title>
+      <link rel="stylesheet" href="cita.css">
 </head>
+
 <body>
-    <!-- Fondo Cinematográfico -->
-    <div class="cinematic-bg">
-        <div class="gradient-sphere"></div>
-        <div class="gradient-sphere-2"></div>
-        <div class="noise-overlay"></div>
-    </div>
+      <!-- Fondo Profesional con Gradiente (Tono Morado) -->
+      <div class="video-background">
+            <div class="gradient-overlay"></div>
+      </div>
 
-    <!-- Capas de fondo animado -->
-    <div class="stars-layer" id="starsLayer"></div>
-    <div class="particles-layer" id="particlesLayer"></div>
-    <div class="floating-elements" id="floatingElements"></div>
+      <!-- Partículas Animadas -->
+      <div class="particles" id="particles"></div>
 
-    <!-- Contenedor Principal -->
-    <div class="container">
-        <!-- Header con fecha -->
-        <div class="header">
-            <div class="date-badge">
-                <span class="date-day">14</span>
-                <span class="date-month">FEB</span>
-                <span class="date-year">2026</span>
+      <!-- Contenedor Principal -->
+      <div class="container fade-in">
+            <div class="invitation-card">
+                  <!-- Luz Ambiental (Morada) -->
+                  <div class="ambient-light"></div>
+
+                  <!-- Decoración Superior con ROSAS -->
+                  <div class="decoration-top">
+                        <div class="decoration-item">🌹</div>
+                        <div class="decoration-item">🥀</div>
+                        <div class="decoration-item">🌹</div>
+                        <div class="decoration-item">🥀</div>
+                  </div>
+
+                  <!-- Título Principal -->
+                  <div class="title-line">
+                        <span>🌹</span>
+                        <h1>PARA MI NOVIA HERMOSA</h1>
+                        <span>🌹</span>
+                  </div>
+
+                  <!-- Subtítulo Elegante -->
+                  <div class="subtitle">
+                        LA MUJER QUE ILUMINA MIS DÍAS
+                  </div>
+
+                  <!-- Fecha Especial -->
+                  <div class="date">
+                        <span>¿Me acompañas el</span>
+                        <span class="date-number">14</span>
+                        <span>de febrero?</span>
+                  </div>
+
+                  <!-- Botón Mágico -->
+                  <div class="invitation-link">
+                        <a href="principal.html" id="citaLink" class="magical-button">
+                              <span>
+                                    <span>🌹</span>
+                                    ¡SÍ, ACEPTO!
+                                    <span>🌹</span>
+                              </span>
+                        </a>
+                  </div>
+
+                  <!-- Información de la Cita -->
+                  <div class="info-grid">
+                        <div class="info-item">
+                              <span class="info-icon">⏰</span>
+                              <span class="info-text">7:00 PM</span>
+                        </div>
+                        <div class="info-item">
+                              <span class="info-icon">📍</span>
+                              <span class="info-text">Un lugar mágico</span>
+                        </div>
+                        <div class="info-item">
+                              <span class="info-icon">💌</span>
+                              <span class="info-text">Solo para ti</span>
+                        </div>
+                  </div>
+
+                  <!-- Mensaje Personal Romántico con ROSAS - CORREGIDO -->
+                  <div class="personal-message">
+                        <div class="roses-decoration">
+                              <span class="rose-icon">🌹</span>
+                              <span class="rose-icon">🥀</span>
+                              <span class="rose-icon">🌹</span>
+                        </div>
+                        "Desde que llegaste a mi vida, todo tiene más color.<br>
+                        Tu sonrisa es mi hogar favorito, y tus ojos mi paz.<br>
+                        Este 14 de febrero quiero recordarte lo especial que eres<br>
+                        y lo mucho que significas para mí.<br>
+                        <br>
+                        <span class="highlight-text">¿Me concedes el honor de pasar este día contigo,<br>
+                        y hacerlo inolvidable?</span>"
+                        <div class="roses-decoration">
+                              <span class="rose-icon">🥀</span>
+                              <span class="rose-icon">🌹</span>
+                              <span class="rose-icon">🥀</span>
+                        </div>
+                  </div>
+
+                  <!-- Firma Personalizada -->
+                  <div class="signature">
+                        <span class="rose-small">🌹</span> Con todo mi amor, tu novio que te adora · [Tu Nombre] <span class="rose-small">🌹</span>
+                  </div>
             </div>
-            <div class="countdown" id="countdown"></div>
-        </div>
 
-        <!-- Título Principal Personalizado -->
-        <h1 class="main-title">
-            <span class="title-word">PARA</span>
-            <span class="title-word">MI</span>
-            <span class="title-word">NOVIA</span>
-            <span class="title-word">HERMOSA</span>
-        </h1>
-        
-        <div class="title-decoration">
-            <span>🌹</span>
-            <span class="decoration-line"></span>
-            <span>🌹</span>
-        </div>
+            <!-- Música de fondo (opcional) -->
+            <audio id="bgMusic" loop style="display: none;">
+                  <source src="nuestra_cancion.mp3" type="audio/mpeg"> 
+            </audio>
+      </div>
 
-        <!-- Contenedor Dual -->
-        <div class="dual-container">
-            <!-- Lado Izquierdo: Corazón 3D Premium -->
-            <div class="heart-side">
-                <div class="heart-premium" id="heart3D">
-                    <div class="heart-3d-container">
-                        <div class="heart-face front"></div>
-                        <div class="heart-face back"></div>
-                        <div class="heart-face left"></div>
-                        <div class="heart-face right"></div>
-                        <div class="heart-face top"></div>
-                        <div class="heart-face bottom"></div>
-                    </div>
-                    
-                    <!-- Capas de brillo -->
-                    <div class="heart-glow"></div>
-                    <div class="heart-aura"></div>
-                    
-                    <!-- Partículas del corazón -->
-                    <div class="heart-particles" id="heartParticles"></div>
-                </div>
-
-                <div class="heart-instruction">
-                    <span class="instruction-icon">💜</span>
-                    <span class="instruction-text">Toca el corazón para leer tu carta</span>
-                    <div class="instruction-line"></div>
-                </div>
-            </div>
-
-            <!-- Lado Derecho: Marco de Foto Premium -->
-            <div class="photo-side">
-                <div class="photo-frame-premium">
-                    <!-- Capas del marco -->
-                    <div class="frame-outer"></div>
-                    <div class="frame-middle"></div>
-                    <div class="frame-inner"></div>
-                    
-                    <!-- Imagen principal -->
-                    <div class="photo-container">
-                        <img src="brazy.jpg" alt="Mi Amor" id="photoImage">
-                        <div class="photo-overlay"></div>
-                    </div>
-                    
-                    <!-- Esquinas decorativas -->
-                    <div class="corner top-left"></div>
-                    <div class="corner top-right"></div>
-                    <div class="corner bottom-left"></div>
-                    <div class="corner bottom-right"></div>
-                    
-                    <!-- Efecto de luz -->
-                    <div class="frame-light"></div>
-                </div>
-
-                <div class="photo-caption">
-                    <span class="caption-icon">💜</span>
-                    <span class="caption-text" id="captionText">La mujer que ilumina mis días</span>
-                    <span class="caption-icon">💜</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mensaje Personal (Aparece después del clic) - CORREGIDO ✅ -->
-        <div class="love-message-container" id="loveMessageContainer">
-            <div class="love-message-card">
-                <div class="message-header">
-                    <span class="message-close" onclick="closeMessage()">✕</span>
-                    <div class="message-roses" id="messageRoses">🌹🌹🌹</div>
-                    <h2 id="messageTitle">Mi Amor</h2>
-                </div>
-                
-                <div class="message-body">
-                    <div class="message-scroll" id="messageScroll">
-                        <p id="messageText">Cargando...</p>
-                    </div>
-                </div>
-                
-                <div class="message-footer">
-                    <span class="message-signature">Con todo mi corazón,</span>
-                    <span class="message-name" id="messageSignature">Tu novio que te adora</span>
-                    <span class="message-date">14 · 02 · 2026</span>
-                </div>
-                
-                <button class="message-button" onclick="closeMessage()">
-                    <span>💜 Guardar en mi corazón 💜</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Música de fondo (opcional) -->
-    <audio id="bgMusic" loop style="display: none;">
-        <source src="tu-musica.mp3" type="audio/mpeg">
-    </audio>
-
-    <script src="script.js"></script>
+      <script src="cita.js"></script>
 </body>
+
 </html>

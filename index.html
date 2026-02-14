@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.02.2026 · La fecha que esperamos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fondo Cinematográfico -->
+    <div class="cinematic-bg">
+        <div class="gradient-sphere"></div>
+        <div class="gradient-sphere-2"></div>
+        <div class="noise-overlay"></div>
+    </div>
+
+    <!-- Capas de fondo animado -->
+    <div class="stars-layer" id="starsLayer"></div>
+    <div class="particles-layer" id="particlesLayer"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <!-- Header con fecha -->
+        <div class="header">
+            <div class="date-badge">
+                <span class="date-day">14</span>
+                <span class="date-month">FEB</span>
+                <span class="date-year">2026</span>
+            </div>
+            <div class="countdown" id="countdown"></div>
+        </div>
+
+        <!-- Título Principal Personalizado -->
+        <h1 class="main-title">
+            <span class="title-word">PARA</span>
+            <span class="title-word">MI</span>
+            <span class="title-word">NOVIA</span>
+            <span class="title-word">HERMOSA</span>
+        </h1>
+        
+        <div class="title-decoration">
+            <span>🌹</span>
+            <span class="decoration-line"></span>
+            <span>🌹</span>
+        </div>
+
+        <!-- Contenedor Dual -->
+        <div class="dual-container">
+            <!-- Lado Izquierdo: Corazón 3D Premium -->
+            <div class="heart-side">
+                <div class="heart-premium" id="heart3D">
+                    <div class="heart-3d-container">
+                        <div class="heart-face front"></div>
+                        <div class="heart-face back"></div>
+                        <div class="heart-face left"></div>
+                        <div class="heart-face right"></div>
+                        <div class="heart-face top"></div>
+                        <div class="heart-face bottom"></div>
+                    </div>
+                    
+                    <!-- Capas de brillo -->
+                    <div class="heart-glow"></div>
+                    <div class="heart-aura"></div>
+                    
+                    <!-- Partículas del corazón -->
+                    <div class="heart-particles" id="heartParticles"></div>
+                </div>
+
+                <div class="heart-instruction">
+                    <span class="instruction-icon">💜</span>
+                    <span class="instruction-text">Toca el corazón para leer tu carta</span>
+                    <div class="instruction-line"></div>
+                </div>
+            </div>
+
+            <!-- Lado Derecho: Marco de Foto Premium -->
+            <div class="photo-side">
+                <div class="photo-frame-premium">
+                    <!-- Capas del marco -->
+                    <div class="frame-outer"></div>
+                    <div class="frame-middle"></div>
+                    <div class="frame-inner"></div>
+                    
+                    <!-- Imagen principal -->
+                    <div class="photo-container">
+                        <img src="brazy.jpg" alt="Mi Amor" id="photoImage">
+                        <div class="photo-overlay"></div>
+                    </div>
+                    
+                    <!-- Esquinas decorativas -->
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+                    
+                    <!-- Efecto de luz -->
+                    <div class="frame-light"></div>
+                </div>
+
+                <div class="photo-caption">
+                    <span class="caption-icon">💜</span>
+                    <span class="caption-text" id="captionText">La mujer que ilumina mis días</span>
+                    <span class="caption-icon">💜</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensaje Personal (Aparece después del clic) - CORREGIDO ✅ -->
+        <div class="love-message-container" id="loveMessageContainer">
+            <div class="love-message-card">
+                <div class="message-header">
+                    <span class="message-close" onclick="closeMessage()">✕</span>
+                    <div class="message-roses" id="messageRoses">🌹🌹🌹</div>
+                    <h2 id="messageTitle">Mi Amor</h2>
+                </div>
+                
+                <div class="message-body">
+                    <div class="message-scroll" id="messageScroll">
+                        <p id="messageText">Cargando...</p>
+                    </div>
+                </div>
+                
+                <div class="message-footer">
+                    <span class="message-signature">Con todo mi corazón,</span>
+                    <span class="message-name" id="messageSignature">Tu novio que te adora</span>
+                    <span class="message-date">14 · 02 · 2026</span>
+                </div>
+                
+                <button class="message-button" onclick="closeMessage()">
+                    <span>💜 Guardar en mi corazón 💜</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Música de fondo (opcional) -->
+    <audio id="bgMusic" loop style="display: none;">
+        <source src="tu-musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

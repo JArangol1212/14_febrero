@@ -1,0 +1,645 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0a0a0a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Video Background Profesional */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 10, 0.7) 100%);
+    z-index: 2;
+}
+
+/* --- CAMBIO PRINCIPAL: Gradiente a Morado --- */
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, #2e0b3a 0%, #4a1b5e 40%, #2d1a4a 80%, #0a0a1a 100%);
+    opacity: 0.9;
+    z-index: 1;
+}
+
+/* Partículas Animadas */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(215, 180, 255, 0.6); /* Morado claro */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(180, 130, 255, 0.7); /* Sombra morada */
+    animation: floatParticle 20s infinite linear;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Contenedor Principal - Glassmorphism */
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.invitation-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 32px;
+    padding: 60px 40px;
+    box-shadow: 
+        0 25px 50px -8px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+        0 0 40px rgba(12, 2, 27, 0.4); /* Sombra exterior morada */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: translateY(0);
+    animation: cardFloat 6s ease-in-out infinite;
+   
+}
+
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Efecto de Luz Ambiental - MORADA */
+.ambient-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* width: 100%;
+    height: 100%; */
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, rgba(170, 130, 255, 0.3) 0%, transparent 70%);
+    filter: blur(60px);
+    animation: ambientPulse 8s ease-in-out infinite;
+    z-index: -1;
+    background-color: rosybrown;
+}
+
+@keyframes ambientPulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Decoración Superior */
+.decoration-top {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.decoration-item {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(230, 200, 255, 0.8); /* Texto morado claro */
+    font-size: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    animation: decorationPulse 3s infinite;
+}
+
+.decoration-item:nth-child(2) { animation-delay: 0.5s; }
+.decoration-item:nth-child(3) { animation-delay: 1s; }
+.decoration-item:nth-child(4) { animation-delay: 1.5s; }
+
+/* --- CAMBIO A MORADO EN EL PULSO --- */
+@keyframes decorationPulse {
+    0%, 100% { transform: scale(1); background: rgba(255, 255, 255, 0.05); }
+    50% { transform: scale(1.1); background: rgba(180, 130, 255, 0.3); } /* Fondo morado */
+}
+
+/* Título Principal */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 40px rgba(170, 120, 255, 0.5); /* Sombra morada */
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.title-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.title-line span {
+    font-size: 32px;
+    animation: spinSlow 10s linear infinite;
+}
+
+@keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Subtítulo */
+.subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Fecha - Color Morado */
+.date {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.date-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #c9a9ff; /* Morado pastel */
+    text-shadow: 0 0 30px rgba(170, 130, 255, 0.7);
+    margin: 0 5px;
+}
+
+/* Enlace Principal - Botón Mágico MORADO */
+.invitation-link {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px;
+}
+
+.magical-button {
+    position: relative;
+    padding: 20px 60px;
+    background: linear-gradient(135deg, #9f7aff 0%, #b47cff 100%); /* Degradado morado */
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 10px 30px -5px rgba(160, 120, 255, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-block;
+}
+
+.magical-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+    z-index: -1;
+}
+
+.magical-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 20px 40px -5px rgba(170, 130, 255, 0.9),
+        0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+}
+
+.magical-button:hover::before {
+    left: 100%;
+}
+
+.magical-button span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Información Adicional */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.info-item {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(200, 170, 255, 0.1); /* Toque morado al hover */
+    border-color: rgba(210, 180, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.info-text {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Mensaje Personal */
+.personal-message {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+}
+
+/* Firma */
+.signature {
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Animación de corazones sutil (ahora son estrellas moradas) */
+.subtle-heart {
+    position: absolute;
+    color: rgba(200, 160, 255, 0.6); /* Morado */
+    font-size: 16px;
+    pointer-events: none;
+    animation: subtleFloat 4s infinite;
+}
+
+@keyframes subtleFloat {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(20deg); opacity: 0; }
+}
+
+/* Contador Elegante */
+.elegant-counter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: rgba(230, 210, 255, 0.9);
+    font-size: 14px;
+    background: rgba(70, 30, 90, 0.3); /* Fondo morado oscuro */
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(210, 180, 255, 0.3);
+    z-index: 100;
+    letter-spacing: 1px;
+}
+
+/* Efecto de carga suave */
+.fade-in {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.loaded {
+    animation: pageLoad 1s ease;
+}
+
+@keyframes pageLoad {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Transición de salida mágica */
+@keyframes magicExit {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.95);
+        filter: blur(10px);
+    }
+}
+
+.magic-exit {
+    animation: magicExit 1.5s ease-in-out forwards;
+}
+
+/* Responsive */
+@media (max-width: 300px) {
+    .invitation-card {
+        padding: 40px 20px;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+        letter-spacing: 4px;
+    }
+    
+    .date-number {
+        font-size: 36px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .magical-button {
+        padding: 15px 40px;
+        font-size: 16px;
+    }
+}
+/* ===== NUEVAS CLASES PARA ROSAS ===== */
+
+/* Decoración de rosas para el mensaje personal */
+.roses-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.rose-icon {
+    font-size: 24px;
+    animation: roseFloat 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+.rose-icon:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.rose-icon:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes roseFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        filter: drop-shadow(0 0 5px rgba(200, 120, 255, 0.5));
+    }
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+        filter: drop-shadow(0 0 15px rgba(200, 120, 255, 0.8));
+    }
+}
+
+/* Texto resaltado en el mensaje */
+.highlight-text {
+    color: #c9a9ff;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(170, 130, 255, 0.5);
+    display: inline-block;
+    animation: textPulse 2s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(170, 130, 255, 0.5);
+    }
+    50% {
+        opacity: 0.9;
+        text-shadow: 0 0 25px rgba(200, 150, 255, 0.8);
+    }
+}
+
+/* Rosas pequeñas para la firma */
+.rose-small {
+    font-size: 16px;
+    animation: roseSpin 4s linear infinite;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+@keyframes roseSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fondo de rosas sutiles (aparecen al hacer hover) */
+.invitation-card:hover .rose-decoration-bg {
+    opacity: 0.1;
+}
+
+.rose-decoration-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><text x="10" y="20" font-size="20">🌹</text><text x="80" y="80" font-size="25">🥀</text><text x="30" y="90" font-size="18">🌹</text><text x="70" y="30" font-size="22">🥀</text></svg>');
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+/* ===== MEJORAS EN EL DISEÑO PARA ZOOM 100% ===== */
+
+/* Ajustes para que se vea bien en zoom 100% */
+@media screen and (min-width: 100px) {
+    .container {
+        max-width: 1000px;
+      
+    }
+    .container{
+        min-height: 200px;
+    }
+    
+    .invitation-card {
+        padding: 50px 40px;
+    }
+    
+    h1 {
+        font-size: 38px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+        letter-spacing: 6px;
+    }
+    
+    .personal-message {
+        font-size: 18px;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Mejor espaciado general */
+.invitation-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.personal-message {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: 30px auto;
+    padding: 30px 25px;
+    border: 1px solid rgba(200, 160, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de brillo en las rosas */
+.rose-icon {
+    position: relative;
+}
+
+.rose-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(200, 150, 255, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.rose-icon:hover::after {
+    opacity: 1;
+}
